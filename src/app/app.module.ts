@@ -12,13 +12,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { BoxComponent } from './components/box/box.component';
+import { FeedComponent } from './components/feed/feed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    BoxComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
