@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Route
 import { Routing, RoutingProviders } from './app.routing';
@@ -28,7 +30,9 @@ import { FeedComponent } from './components/feed/feed.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Routing
+    Routing,
+    BrowserAnimationsModule,
+    ToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
