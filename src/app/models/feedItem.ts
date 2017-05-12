@@ -6,6 +6,7 @@ export class FeedItem {
     competence: Competence;
     time: string = '';
     text: string = '';
+    showRate: boolean = true;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

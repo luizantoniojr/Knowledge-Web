@@ -8,25 +8,25 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>José Angelo</strong> <small>@josenerydev</small> <small>31m</small>
-          <br> Agora sabe <a href="">React</a>!
+          <strong>{{ feedItem.user.name }}</strong> <small>{{ feedItem.user.slack }}</small> <small>{{ feedItem.time }}</small>
+          <br> {{ feedItem.text }} <a href="">{{ feedItem.competence.name }} </a>!
         </p>
       </div>
-      <nav class="level is-mobile">
+      <nav class="level is-mobile" *ngIf="feedItem.showRate">
         <div class="level-left">
-          <a class="level-item">
+          <a class="level-item" (click)="rateUser(1)">
             <span class="icon is-small"><i class="fa fa-star"></i></span>
           </a>
-          <a class="level-item">
+          <a class="level-item" (click)="rateUser(2)">
             <span class="icon is-small"><i class="fa fa-star"></i></span>
           </a>
-          <a class="level-item">
+          <a class="level-item" (click)="rateUser(3)">
             <span class="icon is-small"><i class="fa fa-star"></i></span>
           </a>
-          <a class="level-item">
+          <a class="level-item" (click)="rateUser(4)">
             <span class="icon is-small"><i class="fa fa-star"></i></span>
           </a>
-          <a class="level-item">
+          <a class="level-item" (click)="rateUser(5)">
             <span class="icon is-small"><i class="fa fa-star"></i></span>
           </a>
         </div>

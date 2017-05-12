@@ -1,3 +1,7 @@
 <div class="container">
-  <app-box></app-box>
+  <div class="columns is-multiline">
+    <div *ngFor="let feedItem of feedItems" class="column is-one-third">
+      <app-box [feedItem]="feedItem"></app-box>
+    </div>
+  </div>
 </div>

@@ -16,6 +16,7 @@ import { NavComponent } from './components/shared/nav/nav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { BoxComponent } from './components/box/box.component';
 import { FeedComponent } from './components/feed/feed.component';
+import { LogonComponent } from './components/logon/logon.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FeedComponent } from './components/feed/feed.component';
     NavComponent,
     FooterComponent,
     BoxComponent,
-    FeedComponent
+    FeedComponent,
+    LogonComponent
   ],
   imports: [
     BrowserModule,
