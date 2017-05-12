@@ -15,4 +15,12 @@ export class AuthService {
       .then( response => response)
       .catch(error => console.log(error));
   }
+
+  getToken(){
+    return firebase.auth().currentUser.getToken();
+  }
+
+  getCurrentUser(){
+    return firebase.auth().currentUser;
+  }
 }

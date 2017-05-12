@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from "app/services/auth.service";
 import { NgForm } from "@angular/forms/src/forms";
+import { AuthService } from "app/services/auth.service";
 
 @Component({
   selector: 'app-signup',
