@@ -1,0 +1,15 @@
+.panel{
+    margin-top: 10%;
+    margin-left:30%; 
+    margin-bottom:12%; 
+    width: 40%;
+}
+
+.field{
+    margin-left:30%; 
+}
+
+.button{
+    margin-top: 5%;
+    padding: 7% 35%;
+}
