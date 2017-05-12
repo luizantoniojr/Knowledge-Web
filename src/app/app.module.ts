@@ -1,22 +1,19 @@
-//Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//Route
 import { Routing, RoutingProviders } from './app.routing';
-
-//Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { BoxComponent } from './components/box/box.component';
 import { FeedComponent } from './components/feed/feed.component';
-import { LoginComponent } from './components/login/login.component';
+import { SignInComponent } from './components/auth/signin/signin.component';
+import { AuthService } from "app/services/auth.service";
+import { SignUpComponent } from './components/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +23,8 @@ import { LoginComponent } from './components/login/login.component';
     FooterComponent,
     BoxComponent,
     FeedComponent,
-    LoginComponent
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +34,7 @@ import { LoginComponent } from './components/login/login.component';
     BrowserAnimationsModule,
     ToastModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
