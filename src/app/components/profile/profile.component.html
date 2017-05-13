@@ -1,0 +1,62 @@
+<div class="container">
+  <h1 class="title">Perfil</h1>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Nome</label>
+      </div>
+      <div class="field-body">
+        <div class="field is-grouped">
+          <p class="control is-expanded has-icons-left">
+            <input class="input" type="text" name="name" ngModel required #name="ngModel">
+            <span class="icon is-small is-left">
+          <i class="fa fa-user"></i>
+        </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control is-expanded has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Slack" name="slack" ngModel required #slack="ngModel">
+            <span class="icon is-small is-left">
+          <i class="fa fa-slack"></i>
+        </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Competencia</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+              <!--<md2-chips
+                  [ngModel]="user.competence"
+                  [isRemovable]="true"
+                  item-text="name"
+                  [minChips]="2"
+                  [maxChips]="5"
+                  [allowedPattern]="onlyTextPattern"
+                  placeholder="Adicione as técnologias que você conhece."
+                  [isAutoComplete]="true"
+                  (change)="selected($event)"
+                  [autocompleteDataList]="competences"
+                  autocomplete-item-text="name" 
+                  >    
+            </md2-chips>  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="field is-grouped">
+      <p class="control">
+        <button class="button is-primary" type="submit">Salvar</button>
+      </p>
+      <p class="control">
+        <button class="button is-link">Cancelar</button>
+      </p>
+    </div>
+  </form>
+</div>

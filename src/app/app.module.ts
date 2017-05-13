@@ -14,6 +14,8 @@ import { FeedComponent } from './components/feed/feed.component';
 import { SignInComponent } from './components/auth/signin/signin.component';
 import { AuthService } from "app/services/auth.service";
 import { SignUpComponent } from './components/auth/signup/signup.component';
+import { ProfileComponent } from "./components/profile/profile.component";
+import { Md2Module }  from 'md2';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { SignUpComponent } from './components/auth/signup/signup.component';
     BoxComponent,
     FeedComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { SignUpComponent } from './components/auth/signup/signup.component';
     HttpModule,
     Routing,
     BrowserAnimationsModule,
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    Md2Module
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
