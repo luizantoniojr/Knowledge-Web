@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(form: NgForm){
+  onSubmit(form: NgForm) {
     this.user.name = form.value.name;
     this.user.slack = form.value.slack;
     console.log(this.user);
