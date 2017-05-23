@@ -14,11 +14,23 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var newCompetence = new Competence();
+    newCompetence.name = 'Angular 2';
+    this.competences.push(newCompetence);
+
+     var newCompetence2 = new Competence();
+    newCompetence2.name = 'Vue 2';
+    this.competences.push(newCompetence2);
   }
 
   onSubmit(form: NgForm) {
     this.user.name = form.value.name;
     this.user.slack = form.value.slack;
     console.log(this.user);
+  }
+  selectedCompetence(event: any) {
+    var newCompetence = new Competence();
+    newCompetence.name = event.value[event.value.length - 1].name;
+    this.user.competences.push(newCompetence);
   }
 }

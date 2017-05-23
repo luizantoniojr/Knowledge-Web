@@ -4,8 +4,7 @@ export class User {
     id: number = 0;
     name: string = "";
     slack: string = ""; 
-    competence: Competence[];
-
+    competences: Competence[] = new Array();
     constructor(values: Object = {}) {
         Object.assign(this, values);
     }
