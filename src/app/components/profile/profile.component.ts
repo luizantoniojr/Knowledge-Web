@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() { }
 
   getUser() {
-    var id = '';
+    var id = 'yxCf4H5lK5gnbbQAKGQPXslvDIe2';
     this.profileService.getById(id)
       .subscribe(result => this.user = result,
       error => this.showErrorMessage(error));

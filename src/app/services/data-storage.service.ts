@@ -10,7 +10,7 @@ export class DataStorageService {
   getById(storage: string, id: string) {
     const token = this.authService.getToken();
     //ToDo: implementar um get por id aqui.
-    return this.http.get(`https://knowledge-33ee3.firebaseio.com/${storage}.json?auth=${token}`);
+    return this.http.get(`https://knowledge-33ee3.firebaseio.com/${storage}.json?auth=${token}&id=${id}`);
   }
   get(storage: string) {
     const token = this.authService.getToken();
