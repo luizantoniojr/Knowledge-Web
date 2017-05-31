@@ -1,36 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { User } from "app/models/user";
 import { NgForm } from "@angular/forms/src/forms";
 import { Competence } from "app/models/competence";
+import { ProfileService } from "app/services/profile.service";
+import { ToastsManager } from "ng2-toastr/ng2-toastr";
+import { AuthService } from "app/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  providers: [ProfileService, AuthService]
 })
 export class ProfileComponent implements OnInit {
   user: User = new User();
-  competences: Competence[] = new Array();
-  constructor() { }
-
-  ngOnInit() {
-    var newCompetence = new Competence();
-    newCompetence.name = 'Angular 2';
-    this.competences.push(newCompetence);
-
-     var newCompetence2 = new Competence();
-    newCompetence2.name = 'Vue 2';
-    this.competences.push(newCompetence2);
+  constructor(private profileService: ProfileService, private toastr: ToastsManager,
+    private vcr: ViewContainerRef, private authService: AuthService,
+    private router: Router) {
+    this.toastr.setRootViewContainerRef(vcr);
   }
+  ngOnInit() { }
 
+  getUser() {
+    var id = '';
+    this.profileService.getById(id)
+      .subscribe(result => this.user = result,
+      error => this.showErrorMessage(error));
+  }
   onSubmit(form: NgForm) {
+    this.user.id = this.authService.getCurrentUser().uid;
     this.user.name = form.value.name;
     this.user.slack = form.value.slack;
-    console.log(this.user);
+    this.profileService.create(this.user)
+      .subscribe(m => {
+        this.toastr.success('', 'Sucesso')
+        this.router.navigateByUrl('');
+      },
+      error => this.showErrorMessage(error));
   }
   selectedCompetence(event: any) {
-    var newCompetence = new Competence();
-    newCompetence.name = event.value[event.value.length - 1].name;
-    this.user.competences.push(newCompetence);
+    this.user.competences = new Array();
+    for (var item of event.value) {
+      var newCompetence = new Competence();
+      newCompetence.name = item.value;
+      this.user.competences.push(newCompetence);
+    }
+  }
+  private showErrorMessage(error: any) {
+    this.toastr.error('Ocorreu um erro ao realizar a operação.', 'Oops!');
   }
 }

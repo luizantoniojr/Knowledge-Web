@@ -15,7 +15,8 @@ import { SignInComponent } from './components/auth/signin/signin.component';
 import { AuthService } from "app/services/auth.service";
 import { SignUpComponent } from './components/auth/signup/signup.component';
 import { ProfileComponent } from "./components/profile/profile.component";
-import { Md2Module }  from 'md2';
+import { Md2Module } from 'md2';
+import { DataStorageService } from "app/services/data-storage.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { Md2Module }  from 'md2';
     ToastModule.forRoot(),
     Md2Module
   ],
-  providers: [AuthService],
+  providers: [AuthService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
