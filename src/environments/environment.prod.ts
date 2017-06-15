@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlFirebase: 'https://knowledge-33ee3.firebaseio.com/'
 };

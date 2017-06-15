@@ -1,23 +1,34 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-        <a class="nav-item pacifico medium-text" routerLink="">Knowledge</a>
+      <a class="nav-item pacifico medium-text" routerLink="">Knowledge</a>
     </div>
     <span class="nav-toggle">
       <span></span>
-      <span></span>
-      <span></span>
+    <span></span>
+    <span></span>
     </span>
-    <div class="nav-right nav-menu">
-      <a class="nav-item is-tab" routerLink="/Profile">
+    <!--<div class="nav-right nav-menu">
+      <a *ngIf="!showAuthElements" class="nav-item is-tab" routerLink="/SignUp">Registrar</a>
+      <a *ngIf="!showAuthElements" class="nav-item is-tab" routerLink="/SignIn">Entrar</a>
+      <a *ngIf="showAuthElements" class="nav-item is-tab" routerLink="/Profile">
         <figure class="is-16x16" style="margin-right: 8px;">
-            <i class="fa fa-user" aria-hidden="true"></i>
+          <i class="fa fa-user" aria-hidden="true"></i>
         </figure>
-        Perfil
+        {{userName}}
       </a>
+      <a *ngIf="showAuthElements" class="nav-item is-tab" href="javascript:void(0)" (click)="signOut()">Sair</a>
+    </div>-->
+    <div class="nav-right nav-menu">
       <a class="nav-item is-tab" routerLink="/SignUp">Registrar</a>
       <a class="nav-item is-tab" routerLink="/SignIn">Entrar</a>
-      <a class="nav-item is-tab" routerLink="/SignIn">Sair</a>
+      <a class="nav-item is-tab" routerLink="/Profile">
+        <figure class="is-16x16" style="margin-right: 8px;">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </figure>
+        {{userName}}
+      </a>
+      <a class="nav-item is-tab" href="javascript:void(0)" (click)="signOut()">Sair</a>
     </div>
   </div>
 </nav>

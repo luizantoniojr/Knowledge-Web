@@ -15,10 +15,8 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
   user: User = new User();
-  constructor(private profileService: ProfileService, private toastr: ToastsManager,
-    private vcr: ViewContainerRef, private authService: AuthService,
-    private router: Router) {
-    this.toastr.setRootViewContainerRef(vcr);
+  constructor(private profileService: ProfileService, private toastr: ToastsManager, private viewContainerRef: ViewContainerRef, private authService: AuthService, private router: Router) {
+    this.toastr.setRootViewContainerRef(viewContainerRef);
   }
   ngOnInit() { }
 
